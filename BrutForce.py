@@ -9,7 +9,7 @@ from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, 
                              QLineEdit, QLabel, QComboBox, QSpinBox, QProgressBar, QTextEdit, 
                              QFileDialog, QRadioButton, QHBoxLayout)
-
+import sqlite3
 # Dfinition des ensembles de caracteres
 letters = string.ascii_letters
 numbs = string.digits
@@ -20,7 +20,6 @@ let_nums = letters + numbs
 all_characters = letters + numbs + punc
 
 # Fonction pour utiliser les Rainbow Tables (Pr-calcul)
-import sqlite3
 def check_rainbow_table(hash_target):
     conn = sqlite3.connect("rainbow_table.db")
     cursor = conn.cursor()
